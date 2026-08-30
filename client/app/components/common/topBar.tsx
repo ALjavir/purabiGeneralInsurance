@@ -1,12 +1,12 @@
-import location from "~/assets/image/topbar/location.svg";
-import email from "~/assets/image/topbar/email.svg";
-import phone from "~/assets/image/topbar/phone.svg";
+import location from "~/assets/image/icons/location.svg";
+import email from "~/assets/image/icons/email.svg";
+import phone from "~/assets/image/icons/phone.svg";
 
-import facebook from "~/assets/image/topbar/facebook.svg";
-import twitter from "~/assets/image/topbar/twitter.svg";
-import instagram from "~/assets/image/topbar/instragrom.svg";
-import youtube from "~/assets/image/topbar/yt.svg";
-import linkedin from "~/assets/image/topbar/linkdn.svg";
+import facebook from "~/assets/image/icons/facebook.svg";
+import twitter from "~/assets/image/icons/twitter.svg";
+import instagram from "~/assets/image/icons/instragrom.svg";
+import youtube from "~/assets/image/icons/yt.svg";
+import linkedin from "~/assets/image/icons/linkdn.svg";
 
 
 export default function TopBar() {
@@ -55,7 +55,7 @@ export default function TopBar() {
     ]
 
     return (
-        <header className="w-full bg-p text-white py-4 px-2 md:px-5 xl:px-20 flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8">
+        <header className=" flex w-full bg-p text-white py-4 px-2 md:px-5 xl:px-20  flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8">
 
 
             <div className="flex flex-col md:flex-row flex-wrap items-start px-2 sm:px-0  md:justify-center-safe  sm:items-center gap-2">
@@ -71,7 +71,7 @@ export default function TopBar() {
             </div>
 
 
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-10">
+            <div className="hidden md:flex flex-col md:flex-row items-center gap-4 md:gap-10">
 
 
                 <div className="flex flex-row items-center gap-4 md:gap-6">

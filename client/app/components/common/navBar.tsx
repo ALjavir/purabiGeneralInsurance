@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router";
-import logo from "~/assets/image/navBar/navlogo.png";
+import logo from "~/assets/image/logo/navlogo.png";
 import {
     HiOutlineArrowRight,
     HiOutlineChevronDown,
@@ -8,10 +8,11 @@ import {
     HiOutlineX
 } from "react-icons/hi";
 import { HiOutlineArrowUpRight } from "react-icons/hi2";
+import CustomButton from "./button";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    console.log("the showing of-----------------", isOpen);
+    const [activeSubMenu, setActiveSubMenu] = useState("");
 
     const navItems = [
         { name: "Home", path: "/" },
@@ -20,7 +21,16 @@ export default function Navbar() {
         { name: "Claims", path: "/claims" },
         { name: "Contact Us", path: "/contact-us" },
     ];
-
+    const portal = [
+        {
+            name: "Client Portal",
+            path: "/"
+        }, {
+            name: "Agent Portal",
+            path: "/"
+        }, {
+        }
+    ]
     const servicesItem = [
         { name: "Health Insurance", path: "/" },
         { name: "Travel Insurance", path: "/" },
@@ -29,6 +39,15 @@ export default function Navbar() {
         { name: "Motorcycle Insurance", path: "/" },
         { name: "Life Insurance", path: "/" },
         { name: "Group Insurance for Employees", path: "/" },
+    ]
+    const claimsItem = [
+        { name: "Health Insurance claims", path: "/" },
+        { name: "Travel Insurance claims", path: "/" },
+        { name: "Accident Insurance claims", path: "/" },
+        { name: "Car Insurance claims", path: "/" },
+        { name: "Motorcycle Insurance claims", path: "/" },
+        { name: "Life Insurance claims", path: "/" },
+        { name: "Group Insurance for Employees claims", path: "/" },
     ]
 
     return (
@@ -60,14 +79,12 @@ export default function Navbar() {
                             </NavLink>
 
 
-                            {item.name === "Services" && (
-                                <div className="absolute top-full left-0 hidden  group-hover:block pt-6 w-md z-50">
-
-
+                            {(item.name === "Services" || item.name === "Claims") && (
+                                <div className="absolute top-full left-0 hidden group-hover:block pt-6 w-md z-50">
                                     <div className="flex flex-col bg-[#FFFFFF33] backdrop-blur-[30px] shadow-lg rounded-sm overflow-hidden">
 
-                                        {servicesItem.map((subItem, index) => (
 
+                                        {(item.name === "Services" ? servicesItem : claimsItem).map((subItem, index) => (
                                             <NavLink
                                                 key={index}
                                                 to={subItem.path}
@@ -89,19 +106,13 @@ export default function Navbar() {
                     ))}
                 </nav>
 
-                <div className="flex flex-row items-center rounded   bg-p p-px">
-                    <a
-                        href="#"
-                        className="hidden md:flex items-center gap-2 px-10 py-3.5 bg-p text-white font-medium text-lg lg:text-base rounded-md transition hover:bg-white hover:text-p "
-                    >
-                        Get A Quote
+              
 
+                    <div className="hidden md:block">
+                        <CustomButton path="#" name="Get A Quote" showicon={true} />
+                    </div>
 
-                        <HiOutlineArrowUpRight className="w-4 h-4 transition-transform  group-hover:rotate-45" strokeWidth={2} />
-                    </a>
-
-                </div>
-
+              
 
 
                 <button
@@ -124,30 +135,46 @@ export default function Navbar() {
                     <div className="h-0.5 bg-gray-200"></div>
                     <nav className="flex flex-col gap-4 ">
                         {navItems.map((item) => (
-                            <div key={item.name} className="flex flex-col gap-3">
+                            <div key={item.name} className="flex flex-col gap-2">
                                 <NavLink
                                     to={item.path}
-                                    onClick={() => {
-                                        if (item.name !== "Services") setIsOpen(false);
-                                    }}
                                     className={({ isActive }) =>
                                         `text-base font-medium flex items-center justify-between transition-colors ${isActive ? "text-[#A84428]" : "text-gray-700 hover:text-[#A84428]"
                                         }`
                                     }
                                 >
+
                                     {item.name}
+
+
+                                    {(item.name === "Services" || item.name === "Claims") && (
+                                        <button
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setActiveSubMenu(activeSubMenu === item.name ? "" : item.name);
+                                            }}
+                                            className="p-2 focus:outline-none"
+                                            aria-label="Toggle submenu"
+                                        >
+                                            <HiOutlineChevronDown
+                                                className={`w-6 h-6 transition-transform ${activeSubMenu === item.name ? "rotate-180" : ""
+                                                    }`}
+                                                strokeWidth={2}
+                                            />
+                                        </button>
+                                    )}
                                 </NavLink>
 
 
-                                {item.name === "Services" && (
-                                    <div className="flex flex-col gap-3 pl-4 border-l-2 border-gray-100">
-                                        {servicesItem.map((subItem, index) => (
+                                {(item.name === "Services" || item.name === "Claims") && activeSubMenu === item.name && (
+                                    <div className="flex flex-col gap-3 pl-4 mb-2 border-l-2 border-gray-200">
+                                        {(item.name === "Services" ? servicesItem : claimsItem).map((subItem, index) => (
                                             <NavLink
                                                 key={index}
                                                 to={subItem.path}
                                                 onClick={() => setIsOpen(false)}
                                                 className={({ isActive }) =>
-                                                    `text-sm transition-colors ${isActive ? "text-[#A84428] font-medium" : "text-gray-500 hover:text-[#A84428]"
+                                                    `text-sm transition-colors py-1 ${isActive ? "text-[#A84428] font-medium" : "text-gray-500 hover:text-[#A84428]"
                                                     }`
                                                 }
                                             >
@@ -159,14 +186,20 @@ export default function Navbar() {
                             </div>
                         ))}
                     </nav>
+                    <div className="h-0.5 bg-gray-200"></div>
+                    <div className="flex sm:hidden  flex-col gap-4">
+                        {
+                            portal.map((item, index) => (
+                                <a key={index} href={item.path} className="text-base font-medium uppercase tracking-wide text-gray-700">
+                                    {item.name}
+                                </a>
+                            ))
+                        }
+                    </div>
+                    <div className="block sm:hidden">
+                        <CustomButton path="#" name="Get A Quote" showicon={true} />
+                    </div>
 
-                    {/* Get A Quote (Mobile) */}
-                    <a
-                        href="#"
-                        className="md:hidden flex items-center justify-center gap-2 mt-4 px-6 py-3 bg-[#A84428] text-white font-medium text-base rounded-md"
-                    >
-                        Get A Quote
-                    </a>
                 </div>
             )}
         </header>

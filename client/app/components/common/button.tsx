@@ -1,17 +1,23 @@
 import type { ReactNode } from "react";
+import { HiOutlineArrowUpRight } from "react-icons/hi2";
+import { Link } from "react-router";
 
 interface ButtonProps {
   path: string;
-  children: ReactNode;
+  name: string;
+  showicon: boolean;
 }
 
-export default function CustomButton({ path, children }: ButtonProps) {
+export default function CustomButton({ path, name, showicon }: ButtonProps) {
   return (
-    <a
-      href={path}
-      className="inline-block mt-6 px-6 py-3 bg-blue hover:bg-[#1f82bd] text-white font-medium text-sm md:text-base rounded-lg transition-all duration-200 shadow-md"
-    >
-      {children}
-    </a>
+    <Link to={path} className="flex items-center justify-between gap-2 px-10 py-3.5 bg-p rounded-md border border-p text-white text-xs md:text-base lg:text-xl font-medium tracking-wider transition hover:bg-white hover:text-p ">
+ {name}
+
+      {showicon && (
+        <HiOutlineArrowUpRight className="w-4 h-4 transition-transform  group-hover:rotate-45" strokeWidth={2} />
+      )}
+
+    </Link>
+
   );
 }
