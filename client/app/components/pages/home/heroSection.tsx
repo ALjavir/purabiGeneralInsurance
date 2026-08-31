@@ -20,7 +20,7 @@ export default function HomeHeroSection() {
     <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/70 to-transparent md:from-black/90 md:via-black/50 z-0"></div>
     
    
-    <div className="relative z-10 w-full px-4 md:px-8 lg:px-20 max-w-6xl flex flex-col items-start">
+    <div className="relative z-10 w-full px-6 md:px-8 lg:px-20 max-w-6xl flex flex-col items-start">
         
         <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4 lg:mb-6">
             <div className="w-8 md:w-12 h-px bg-white"></div>
@@ -29,7 +29,7 @@ export default function HomeHeroSection() {
             </p>
         </div>
         
-        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-snug md:leading-tight mb-4 md:mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-snug md:leading-tight mb-4 md:mb-6">
             {title}
         </h1>
         

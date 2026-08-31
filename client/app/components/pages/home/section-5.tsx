@@ -1,70 +1,52 @@
+import part1 from "~/assets/image/page/home/partner (1).jpg";
+import part2 from "~/assets/image/page/home/partner (2).jpg";
+import part3 from "~/assets/image/page/home/partner (3).jpg";
+import part4 from "~/assets/image/page/home/partner (4).jpg";
+import part5 from "~/assets/image/page/home/partner (5).jpg";
+import part6 from "~/assets/image/page/home/partner (6).jpg";
+
 export default function Section5() {
-    const title = "Meet Our Successfull Students";
-    const subTitle = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.";
-    const grid = [
-        {
-            image: "https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            name: "Oleg Ivanov",
-            designation: "Web Developer",
+    const title = "Our Genuine Trusted Partners & Clients";
+    const partnerData = [
+        { name: "walton", img: part1 },
+        { name: "palmal group", img: part2 },
+        { name: "genaral insurance", img: part3 },
+        { name: "health insurance", img: part4 },
+        { name: "dorren power", img: part5 },
+        { name: "acmi", img: part6 }
+    ];
 
-        },
-        {
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-            name: "John Doe",
-            designation: "Web Developer",
 
-        },
-        {
-            image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            name: "Aiony Haust",
-            designation: "Web Developer",
-
-        },
-        {
-            image: "https://plus.unsplash.com/premium_photo-1664536392896-cd1743f9c02c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            name: "John Doe",
-            designation: "Web Developer",
-
-        }
-    ]
+    const infinitePartners = [...partnerData, ...partnerData];
 
     return (
-        <section id="section-5" className="my-16 lg:my-24 px-4 sm:px-6 lg:px-8">
-       
-            <div className="mb-8 md:mb-12 text-left">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight mb-3">
-                    {title}
-                </h1>
-                <p className="text-muted text-sm sm:text-base leading-relaxed max-w-2xl">
-                    {subTitle}
-                </p>
-            </div>
-
-      
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {grid.map((item, index) => (
-                    <div
-                        key={index}
-                        className="bg-white border border-gray-200/70 rounded overflow-hidden shadow-sm flex flex-col"
-                    >
-                        <div className="w-full h-64 sm:h-75">
-                            <img
-                                src={item.image}
-                                alt={item.name}
-                                className="w-full h-full object-cover object-top"
+        <section id="section-5" className="w-full max-w-7xl mx-auto py-12 md:py-16 lg:py-20 px-5 md:px-12 xl:px-0 overflow-hidden">
+            
+          
+            <h1 className="text-center text-lg md:text-4xl   uppercase tracking-wide mb-10 md:mb-15">
+                {title}
+            </h1>
+           
+            <div className="w-full border-t border-b md:border border-gray-500 overflow-hidden flex bg-white">
+                
+              
+                <div className="flex w-max animate-marquee">
+                    {infinitePartners.map((partner, index) => (
+                        <div 
+                            key={index} 
+                        
+                            className="flex shrink-0 items-center justify-center w-36 sm:w-48 md:w-56 h-24 sm:h-32 border-r border-gray-400 px-6 py-4"
+                        >
+                            <img 
+                                src={partner.img} 
+                                alt={partner.name} 
+                                className="w-full h-full object-contain" 
                             />
                         </div>
-                        <div className="p-5 flex flex-col justify-center">
-                            <h2 className="text-lg font-bold text-[#111827]">
-                                {item.name}
-                            </h2>
-                            <p className="text-gray-500 text-xs sm:text-sm font-medium mt-1">
-                                {item.designation}
-                            </p>
-                        </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
+                
             </div>
         </section>
-    )
+    );
 }

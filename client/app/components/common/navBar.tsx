@@ -51,10 +51,10 @@ export default function Navbar() {
     ]
 
     return (
-        <header id="top-nav-bar" className="relative z-50 mx-auto py-3.5  px-2 md:px-5 xl:px-20 w-full flex items-center justify-between bg-white">
+        <header id="top-nav-bar" className="relative z-50 mx-auto py-3.5  px-5 md:px-5 xl:px-20 w-full flex items-center justify-between bg-white">
 
 
-            <img src={logo} alt="Logo" className="h-15 object-contain" />
+            <img src={logo} alt="Logo" className="h-10 md:h-15 object-contain" />
 
             <div className="flex flex-row items-center gap-2.5">
                 <nav className="hidden xl:flex items-center gap-2.5 h-full">
@@ -135,11 +135,11 @@ export default function Navbar() {
                     <div className="h-0.5 bg-gray-200"></div>
                     <nav className="flex flex-col gap-4 ">
                         {navItems.map((item) => (
-                            <div key={item.name} className="flex flex-col gap-2">
+                            <div key={item.name} className="flex flex-col gap-2  justify-items-center-safe   } ">
                                 <NavLink
                                     to={item.path}
                                     className={({ isActive }) =>
-                                        `text-base font-medium flex items-center justify-between transition-colors ${isActive ? "text-[#A84428]" : "text-gray-700 hover:text-[#A84428]"
+                                        `text-base w-full font-medium flex items-center justify-between transition-colors ${isActive ? "text-p border-b border-b-p" : "text-gray-700 hover:text-[#A84428]"
                                         }`
                                     }
                                 >

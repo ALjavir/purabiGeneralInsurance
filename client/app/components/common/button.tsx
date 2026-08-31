@@ -10,8 +10,8 @@ interface ButtonProps {
 
 export default function CustomButton({ path, name, showicon }: ButtonProps) {
   return (
-    <Link to={path} className="flex items-center justify-between gap-2 px-10 py-3.5 bg-p rounded-md border border-p text-white text-xs md:text-base lg:text-xl font-medium tracking-wider transition hover:bg-white hover:text-p ">
- {name}
+    <Link to={path} className="flex items-center justify-between gap-2 px-10 py-3 bg-p rounded-md border border-p text-white text-sm lg:text-base font-medium tracking-wider transition hover:bg-white hover:text-p ">
+      {name}
 
       {showicon && (
         <HiOutlineArrowUpRight className="w-4 h-4 transition-transform  group-hover:rotate-45" strokeWidth={2} />

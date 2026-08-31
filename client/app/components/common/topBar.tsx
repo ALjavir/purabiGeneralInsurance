@@ -55,7 +55,7 @@ export default function TopBar() {
     ]
 
     return (
-        <header className=" flex w-full bg-p text-white py-4 px-2 md:px-5 xl:px-20  flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8">
+        <header className=" flex w-full bg-p text-white py-4 px-4 md:px-5 xl:px-20  flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8">
 
 
             <div className="flex flex-col md:flex-row flex-wrap items-start px-2 sm:px-0  md:justify-center-safe  sm:items-center gap-2">
