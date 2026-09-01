@@ -111,7 +111,12 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="w-full py-8 md:py-10 px-5 md:px-12 lg:px-20">
+        <footer className="w-full py-8 md:py-10 px-5 md:px-12 lg:px-20"
+        style={{
+            background: `linear-gradient(0deg, #FFFFFF, #FFFFFF),
+            linear-gradient(180deg, rgba(172, 62, 37, 0),rgba(172, 62, 37, 1) 100%)`,
+            }}
+        >
 
             <div className="gap-8 mx-auto flex flex-col items-center text-center mt-18">
                 <p className="text-gray-500 text-sm md:text-base">
@@ -174,11 +179,11 @@ export default function Footer() {
 
                 <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-15 gap-3 md:gap-5 justify-items-center w-fit">
                     {paymentPartner.map((item, index) => (
-
                         <img
+                            key={index}
                             src={item.img}
                             alt="payment"
-                            className=" h-full max-w-25 object-contain"
+                            className="h-full max-w-25 object-contain"
                         />
 
                     ))}

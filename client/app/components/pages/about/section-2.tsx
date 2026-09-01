@@ -20,11 +20,11 @@ export default function Section2() {
     ];
 
     return (
-        <section className="w-full py-16 lg:py-25 px-4 md:px-8 lg:px-25">
+        <section className="w-full py-16 lg:py-25 px-4 md:px-8 lg:px-25 mt-8">
             <div className="mx-auto flex flex-col xl:flex-row items-center gap-16 lg:gap-20">
 
 
-                <div className="relative w-full md:max-w-3xl xl:max-w-xl 2xl:max-w-3xl shrink-0">
+                <div className="relative w-full md:max-w-3xl xl:max-w-xl 2xl:max-w-175  shrink-0">
 
                     <img
                         src={crazyLeft}
@@ -33,17 +33,17 @@ export default function Section2() {
                     />
 
 
-                    <div className="absolute top-[15%] right-[18%] flex flex-col  text-white text-center">
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-2">{experience}</h2>
-                        <p className="text-[8px] sm:text-[10px] md:text-xs font-semibold uppercase mt-0.5 sm:mt-1 leading-tight tracking-wide">
+                    <div className="absolute top-[15%]  right-[18%] md:right-[20%] lg:right-[19%]  flex flex-col  text-white text-center">
+                        <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold md:mb-2">{experience}</h2>
+                        <p className="text-[8px] sm:text-[10px] md:text-xs font-medium uppercase mt-0.5 sm:mt-1 leading-tight tracking-wide">
                             Years of<br />Experience
                         </p>
                     </div>
 
 
-                    <div className="absolute bottom-[18%] left-[30%] flex flex-col">
-                        <h3 className="text-xl md:text-3xl font-semibold ">{numOfclienct}</h3>
-                        <p className="text-p text-[10px] md:text-base font-semibold uppercase tracking-widest mt-1">Satisfied Clients</p>
+                    <div className="absolute bottom-[18%] left-[30%] lg:bottom-[19%]  flex flex-col">
+                        <h3 className="text-base md:text-3xl font-semibold ">{numOfclienct}</h3>
+                        <p className="text-p text-[8px] md:text-base font-medium uppercase tracking-widest md:mt-1">Satisfied Clients</p>
                     </div>
 
                 </div>

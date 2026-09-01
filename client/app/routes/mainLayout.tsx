@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
-//import type { Route } from "./+types/home";
-import type { Route } from "./+types/healthInsurance";
+import type { Route } from "./+types/home";
+
 
 import Footer from "~/components/common/footer";
 import Navbar from "~/components/common/navBar";

@@ -28,8 +28,8 @@ export default function Section2() {
 
     <section id="section-2" className="lg:px-10 py-15 md:py-20 gap-12 bg-[#F7ECEA] px-5 ">
 
- 
-<div className="grid grid-cols-3 md:grid-cols-4 lg:flex gap-4 md:gap-8 lg:gap-12 justify-items-center lg:justify-center items-start lg:items-center pb-4 w-full">
+
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:flex gap-4 md:gap-8 lg:gap-12 justify-items-center lg:justify-center items-start lg:items-center pb-4 w-full">
         {categories.map((cat) => {
           const isActive = activeTab === cat.name;
 
@@ -42,8 +42,8 @@ export default function Section2() {
             >
               <div
                 className={`w-16 h-16 md:w-20 md:h-20 xl:w-25 xl:h-25 flex items-center justify-center rounded-full transition-colors duration-300 ${isActive
-                    ? "bg-p text-white"
-                    : "bg-[#AC3E251A] text-p hover:bg-[#AC3E2533]"
+                  ? "bg-p text-white"
+                  : "bg-[#AC3E251A] text-p hover:bg-[#AC3E2533]"
                   }`}
               >
                 <cat.Icon
