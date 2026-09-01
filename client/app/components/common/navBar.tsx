@@ -62,6 +62,7 @@ export default function Navbar() {
                         <div key={item.name} className="relative group h-full flex items-center">
                             <NavLink
                                 to={item.path}
+                                
                                 className={({ isActive }) =>
                                     `w-full flex items-center gap-1 px-5 py-3 border-b transition-colors text-lg font-medium ${isActive
                                         ? "text-p border-p"
@@ -138,6 +139,7 @@ export default function Navbar() {
                             <div key={item.name} className="flex flex-col gap-2  justify-items-center-safe   } ">
                                 <NavLink
                                     to={item.path}
+                                     onClick={() => setIsOpen(item.name === "Services" || item.name === "Claims" ? true : false)}
                                     className={({ isActive }) =>
                                         `text-base w-full font-medium flex items-center justify-between transition-colors ${isActive ? "text-p border-b border-b-p" : "text-gray-700 hover:text-[#A84428]"
                                         }`

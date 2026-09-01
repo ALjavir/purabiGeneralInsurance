@@ -15,7 +15,7 @@ export default function Section2() {
 
 
   const categories = [
-    { name: "Health", Icon: HealthIcon, link: "/quote/health" },
+    { name: "Health", Icon: HealthIcon, link: "/healthInsurance" },
     { name: "Car", Icon: CarIcon, link: "/quote/car" },
     { name: "Travel", Icon: TravelIcon, link: "/quote/travel" },
     { name: "Life", Icon: LifeIcon, link: "/quote/life" },

@@ -14,20 +14,34 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/about-us": {
+    params: {};
+  };
+  "/healthInsurance": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/";
+    page: "/" | "/about-us" | "/healthInsurance";
   };
   "./routes/mainLayout.tsx": {
     id: "routes/mainLayout";
-    page: "/";
+    page: "/" | "/about-us" | "/healthInsurance";
   };
   "./routes/home.tsx": {
     id: "routes/home";
     page: "/";
+  };
+  "./routes/about.tsx": {
+    id: "routes/about";
+    page: "/about-us";
+  };
+  "./routes/healthInsurance.tsx": {
+    id: "routes/healthInsurance";
+    page: "/healthInsurance";
   };
 };
 
@@ -35,4 +49,6 @@ type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/mainLayout": typeof import("./app/./routes/mainLayout.tsx");
   "routes/home": typeof import("./app/./routes/home.tsx");
+  "routes/about": typeof import("./app/./routes/about.tsx");
+  "routes/healthInsurance": typeof import("./app/./routes/healthInsurance.tsx");
 };

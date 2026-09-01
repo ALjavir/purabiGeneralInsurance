@@ -11,6 +11,8 @@ export default [
 
     layout("./routes/mainLayout.tsx", [
         index("./routes/home.tsx"),
+        route("/about-us", "./routes/about.tsx"),
+        route("/healthInsurance", "./routes/healthInsurance.tsx"),
     ]),
 
 ] satisfies RouteConfig;
